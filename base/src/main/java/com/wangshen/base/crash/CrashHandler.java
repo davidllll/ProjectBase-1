@@ -9,9 +9,9 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Looper;
 
-import com.kidswant.basic.BuildConfig;
-import com.kidswant.basic.utils.ToastUtils;
+
 import com.wangshen.base.BuildConfig;
+import com.wangshen.base.util.ToastUtils;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

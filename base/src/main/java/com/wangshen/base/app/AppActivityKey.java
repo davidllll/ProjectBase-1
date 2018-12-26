@@ -8,5 +8,6 @@ package com.wangshen.base.app;
  * @change
  */
 public class AppActivityKey {
-
+    public static final String SAMPLE_ACTIVITY="/sample/SampleActivity";
+    public static final String SAMPLELIST_ACTIVITY="/sample/SampleListActivity";
 }

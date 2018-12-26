@@ -22,7 +22,7 @@ public class ToastUtils {
         if (TextUtils.isEmpty(message) || mContext == null) return;
         if (!isNotificationEnabled(mContext) && mContext instanceof Activity) {
             try {
-                CustomToast.makeText(mContext, message, duration).setGravity(Gravity.CENTER, 0, 0).show();
+                CustomToast.makeText(mContext, message, duration).setGravity(Gravity.BOTTOM, 0, 0).show();
             } catch (Exception e) {
             }
             return;
@@ -33,7 +33,7 @@ public class ToastUtils {
             mToast.setDuration(duration);
             mToast.setText(message);
         }
-        mToast.setGravity(Gravity.CENTER, 0, 0);
+        mToast.setGravity(Gravity.BOTTOM, 0, 0);
         mToast.show();
     }
 

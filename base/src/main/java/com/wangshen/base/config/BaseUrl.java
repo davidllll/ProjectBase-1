@@ -8,5 +8,5 @@ package com.wangshen.base.config;
  * @change
  */
 public class BaseUrl {
-    public static String BASEURL="";
+    public static final String BASEURL="http://172.21.201.81:8080/BizFontEnd_Ext/";
 }

@@ -1,5 +1,9 @@
 package com.wangshen.base.ui.mvp.base.view;
 
+import android.content.Intent;
+
+import com.wangshen.base.ui.mvp.base.presenter.BasePresenter;
+
 /**
  * @name ProjectBase
  * @class describe
@@ -8,4 +12,28 @@ package com.wangshen.base.ui.mvp.base.view;
  * @change
  */
 public interface BaseView {
+    /**
+     * 显示加载框
+     */
+    void showLoadingDialog();
+
+    /**
+     * 隐藏加载狂
+     */
+    void hideLoadingDialog();
+
+    /**
+     * 提示信息
+     * @param msg
+     */
+    void showMessage(String msg);
+    /**
+     * 关闭页面
+     */
+    void finishActivity();
+
+    /**
+     * 关闭页面并返回结果
+     */
+    void finishActivityForResult(int resultCode, Intent data);
 }
