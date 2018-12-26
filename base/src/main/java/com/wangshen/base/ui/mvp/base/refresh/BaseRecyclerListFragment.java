@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 
@@ -37,7 +38,7 @@ public abstract class BaseRecyclerListFragment<V extends BaseRecyclerListContact
     @BindView(R2.id.ll_root)
     LinearLayout llRoot;
     @BindView(R2.id.ll_title_content)
-    LinearLayout llTitleContent;
+    RelativeLayout llTitleContent;
     BaseAdapter adapter;
     @BindView(R2.id.back_iv)
     ImageView backIv;
