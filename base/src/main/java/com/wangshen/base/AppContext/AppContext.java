@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wangshen.base.config.BaseUrl;
+import com.wangshen.base.crash.CrashHandler;
 import com.wangshen.base.net.client.KRetrofitConfig;
 import com.wangshen.base.net.client.KRetrofitFactory;
 import com.wangshen.base.net.interceptor.ExCookieInterceptor;
@@ -29,5 +30,6 @@ public class AppContext extends Application {
                 .addInterceptor(new ExCookieInterceptor())
                 .build();
         KRetrofitFactory.init(config);
+        CrashHandler.getInstance().init(this);
     }
 }

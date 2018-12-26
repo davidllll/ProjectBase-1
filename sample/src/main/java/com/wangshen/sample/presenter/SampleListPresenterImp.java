@@ -1,7 +1,9 @@
 package com.wangshen.sample.presenter;
 
+import com.wangshen.base.net.base.ExBaseObserver;
 import com.wangshen.base.net.bean.BaseAppEntity;
 
+import com.wangshen.base.net.exception.KRetrofitException;
 import com.wangshen.base.ui.mvp.base.refresh.BaseRecyclerListPresenter;
 
 import com.wangshen.base.ui.mvp.base.refresh.RequestCallback;
@@ -25,7 +27,7 @@ public class SampleListPresenterImp extends BaseRecyclerListPresenter<SampleList
 
     @Override
     public void getSampleData(String m) {
-        sampleDataSource.sampleRequest(m)
+      /*  sampleDataSource.sampleRequest(m)
                 .compose(this.<BaseAppEntity<SampleBean>>handleEverythingResult())
                 .subscribe(new Consumer<BaseAppEntity<SampleBean>>() {
                     @Override
@@ -36,6 +38,34 @@ public class SampleListPresenterImp extends BaseRecyclerListPresenter<SampleList
                     @Override
                     public void accept(Throwable throwable) throws Exception {
                         getCallback().onFail(throwable.getMessage());
+                    }
+                });*/
+        sampleDataSource.sampleRequest(m)
+                .compose(this.<BaseAppEntity<SampleBean>>handleEverythingResult())
+                .subscribe(new ExBaseObserver<BaseAppEntity<SampleBean>>() {
+                    @Override
+                    public void onSuccess(BaseAppEntity<SampleBean> sampleBeanBaseAppEntity) {
+                        getCallback().onSuccess(sampleBeanBaseAppEntity.getContent().getResult());
+                    }
+
+                    @Override
+                    public void onCodeError(BaseAppEntity<SampleBean> sampleBeanBaseAppEntity) {
+                        getCallback().onFail(sampleBeanBaseAppEntity.getMessage());
+                    }
+
+                    @Override
+                    public String getExpireLoginCode() {
+                        return null;
+                    }
+
+                    @Override
+                    public void onFailure(KRetrofitException e) {
+                        getCallback().onFail(e.getMessage());
+                    }
+
+                    @Override
+                    public void onExpireLogin() {
+
                     }
                 });
     }
