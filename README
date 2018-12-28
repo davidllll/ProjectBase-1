@@ -4,3 +4,4 @@ base模块中有常用工具类，可以自行使用，扩展
 网络框架及MVP的使用一定要遵循规范继承个子的base类
 一些三方库的地址都写在了libs_version中也可以自行扩展
 新建模块的版本号一定要跟sample中的一样
+如果要使用ARouter实现路由跳转界面，请在各自的子模块的build.gradle中加入annotationProcessor 'com.alibaba:arouter-compiler:1.1.4' 后面1.1.4是版本号，不然会跳转失败

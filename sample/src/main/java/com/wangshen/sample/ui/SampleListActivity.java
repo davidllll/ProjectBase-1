@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.View;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.alibaba.android.arouter.launcher.ARouter;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.wangshen.base.app.AppActivityKey;
 import com.wangshen.base.dialog.base.BaseDialog;
@@ -26,7 +27,7 @@ import java.util.ArrayList;
  * @time 2018/12/24 16:10
  * @change
  */
-@Route(path = AppActivityKey.SAMPLELIST_ACTIVITY,group = "123")
+@Route(path = AppActivityKey.SAMPLELIST_ACTIVITY)
 public class SampleListActivity extends BaseRecyclerListActivity<SampleListPresenterImp> implements SampleListContact.View{
     @Override
     public void finishActivity() {
@@ -45,7 +46,7 @@ public class SampleListActivity extends BaseRecyclerListActivity<SampleListPrese
 
     @Override
     public void initView() {
-
+        ARouter.getInstance().inject(this);
     }
 
     @Override

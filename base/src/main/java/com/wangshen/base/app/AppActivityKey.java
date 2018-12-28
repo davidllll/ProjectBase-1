@@ -10,4 +10,6 @@ package com.wangshen.base.app;
 public class AppActivityKey {
     public static final String SAMPLE_ACTIVITY="/sample/SampleActivity";
     public static final String SAMPLELIST_ACTIVITY="/sample/SampleListActivity";
+    public static final String NATIVE="/text/NavigationActivity";
+    public static final String SAMPLEREFESH_ACTIVITY="/sample/SampleRefreshActivity";
 }

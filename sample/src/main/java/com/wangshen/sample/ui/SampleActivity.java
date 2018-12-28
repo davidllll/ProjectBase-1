@@ -8,24 +8,31 @@ import android.widget.Button;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.alibaba.android.arouter.facade.callback.NavCallback;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.wangshen.base.app.AppActivityKey;
 import com.wangshen.base.dialog.base.BaseDialog;
 import com.wangshen.base.ui.mvp.base.ui.BaseMvpActivity;
 import com.wangshen.base.util.ToastUtils;
+import com.wangshen.base.view.NavigationView;
 import com.wangshen.sample.R;
 import com.wangshen.sample.R2;
 import com.wangshen.sample.SampleBean;
 import com.wangshen.sample.dialog.SampleDialog;
 import com.wangshen.sample.presenter.SampleContact;
 import com.wangshen.sample.presenter.SamplePresenterImp;
-import com.wangshen.sample.presenter.SampleRefreshContact;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.reactivex.Observable;
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
+import io.reactivex.functions.Function;
 
 @Route(path = AppActivityKey.SAMPLE_ACTIVITY)
 public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implements SampleContact.View {
@@ -36,7 +43,6 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
     Button sampleBt2;
     @BindView(R2.id.sample_bt3)
     Button sampleBt3;
-
 
     @Override
     public SamplePresenterImp getPresenter() {
@@ -55,7 +61,7 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
 
     @Override
     public void initView() {
-
+        ARouter.getInstance().inject(this);
     }
 
     @Override
@@ -65,8 +71,36 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
 
     @Override
     public void getData() {
-
+        Observable.interval(1, 10, TimeUnit.SECONDS).map(new Function<Long, String>() {
+            @Override
+            public String apply(Long aLong) throws Exception {
+                return String.valueOf(aLong) + "a";
+            }
+        }).subscribe(observer);
+        //Observable.range(1,10).map(String :: valueOf).subscribe(observer);
     }
+
+    Observer<String> observer = new Observer<String>() {
+        @Override
+        public void onSubscribe(Disposable d) {
+
+        }
+
+        @Override
+        public void onNext(String value) {
+            Log.e(TGA, value);
+        }
+
+        @Override
+        public void onError(Throwable e) {
+
+        }
+
+        @Override
+        public void onComplete() {
+
+        }
+    };
 
     @Override
     public void finishActivity() {
@@ -83,20 +117,20 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
         this.runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                ToastUtils.showToast(mContext,"取到了="+sampleBean.getResult().size()+"条数据");
+                ToastUtils.showToast(mContext, "取到了=" + sampleBean.getResult().size() + "条数据");
             }
         });
-        Log.e(TGA,"取到了="+sampleBean.getResult().size()+"条数据");
+        Log.e(TGA, "取到了=" + sampleBean.getResult().size() + "条数据");
     }
 
-    @OnClick({R2.id.sample_bt1, R2.id.sample_bt2, R2.id.sample_bt3})
+    @OnClick({R2.id.sample_bt1, R2.id.sample_bt2, R2.id.sample_bt3,R2.id.sample_bt4})
     public void onViewClicked(View view) {
         int i = view.getId();
         if (i == R.id.sample_bt1) {
             presenter.getSampleData("123");
         } else if (i == R.id.sample_bt2) {
-            startActivity(new Intent(this,SampleListActivity.class));
-            ARouter.getInstance().build(AppActivityKey.SAMPLELIST_ACTIVITY,"123").navigation(this, new NavigationCallback() {
+            //startActivity(new Intent(this, SampleListActivity.class));
+            ARouter.getInstance().build(AppActivityKey.SAMPLELIST_ACTIVITY).navigation(this, new NavigationCallback() {
                 @Override
                 public void onFound(Postcard postcard) {
                     Log.e(TGA, "onArrival: 找到了 ");
@@ -104,7 +138,7 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
 
                 @Override
                 public void onLost(Postcard postcard) {
-                    Log.e(TGA, "onArrival: 找不到了 ");
+                    Log.e(TGA, "onArrival: 找不到了 "+postcard.getPath());
                 }
 
                 @Override
@@ -118,7 +152,10 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
                 }
             });
         } else if (i == R.id.sample_bt3) {
-            startActivity(new Intent(this,SampleRefreshActivity.class));
+            ARouter.getInstance().build(AppActivityKey.SAMPLEREFESH_ACTIVITY).navigation(this);
+        }else if (i == R.id.sample_bt4){
+           // startActivity(new Intent(this,NavigationActivity.class));
+            ARouter.getInstance().build(AppActivityKey.NATIVE).navigation(this);
         }
     }
 

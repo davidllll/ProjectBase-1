@@ -2,6 +2,8 @@ package com.wangshen.sample.ui;
 
 import android.content.Intent;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
+import com.wangshen.base.app.AppActivityKey;
 import com.wangshen.base.dialog.base.BaseDialog;
 import com.wangshen.base.ui.mvp.base.adapter.BaseAdapter;
 import com.wangshen.base.ui.mvp.base.refresh.BaseRecyclerRefreshActivity;
@@ -20,6 +22,7 @@ import java.util.ArrayList;
  * @time 2018/12/26 9:14
  * @change
  */
+@Route(path = AppActivityKey.SAMPLEREFESH_ACTIVITY)
 public class SampleRefreshActivity extends BaseRecyclerRefreshActivity<SampleRefreshPresenterImp> {
     @Override
     public void finishActivity() {
