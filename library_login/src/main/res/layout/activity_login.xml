@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.wangshen.library_login.ui.LoginActivity">
+    <ImageView
+
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_980" />
+    <Button
+        android:layout_marginTop="@dimen/px_68"
+        android:textSize="@dimen/px_52"
+        android:text="@string/login"
+        android:background="@drawable/shape_login"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/px_778"
+        android:layout_height="@dimen/px_127" />
+    <Button
+        android:layout_marginTop="@dimen/px_29"
+        android:textSize="@dimen/px_52"
+        android:text="@string/register"
+        android:background="@drawable/shape_register"
+        android:layout_gravity="center"
+        android:layout_width="@dimen/px_778"
+        android:layout_height="@dimen/px_127" />
+    <LinearLayout
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/px_96"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:text="@string/registe_walk"
+            android:textSize="@dimen/px_52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="》"
+            android:layout_marginLeft="@dimen/px_24"
+            android:textSize="@dimen/px_52"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</LinearLayout>

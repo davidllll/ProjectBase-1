@@ -46,4 +46,5 @@ dependencies {
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
     api rootProject.ext.dependencies["Arouter"]
     annotationProcessor rootProject.ext.dependencies["Arouter-compiler"]
+    api rootProject.ext.dependencies["autosize"]
 }
