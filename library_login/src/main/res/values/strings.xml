@@ -18,4 +18,10 @@
     <string name="login">登录</string>
     <string name="register">注册</string>
     <string name="registe_walk">逛一逛</string>
+    <string name="phone">手机号</string>
+    <string name="verification">验证码</string>
+    <string name="setpassword">设置密码</string>
+    <string name="hint_setpassword">长度不少于6位,包含字母或数字</string>
+    <string name="invitation">邀请码</string>
+    <string name="get_code">获取验证码</string>
 </resources>

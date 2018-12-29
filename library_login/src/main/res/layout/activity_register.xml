@@ -6,34 +6,200 @@
     android:layout_height="match_parent">
     <ImageView
         android:id="@+id/register_back"
-        android:layout_marginLeft="@dimen/px_40"
-        android:layout_marginTop="@dimen/px_40"
-        android:layout_marginBottom="@dimen/px_40"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_marginBottom="@dimen/dp_15"
         android:src="@drawable/back"
-        android:layout_width="@dimen/px_26"
-        android:layout_height="@dimen/px_50" />
+        android:layout_width="@dimen/dp_9"
+        android:layout_height="@dimen/dp_18" />
 
     <TextView
-        android:layout_marginLeft="@dimen/px_23"
+        android:layout_marginLeft="@dimen/dp_7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-       android:layout_marginTop="@dimen/px_29"
+       android:layout_marginTop="@dimen/dp_11"
         android:layout_toEndOf="@+id/register_back"
         android:layout_toRightOf="@+id/register_back"
         android:text="@string/back"
-        android:textSize="@dimen/px_52" />
+        android:textSize="@dimen/sp_18" />
     <TextView
-        android:textSize="@dimen/px_52"
+        android:textSize="@dimen/sp_18"
         android:text="@string/register"
-        android:layout_marginTop="@dimen/px_29"
+        android:layout_marginTop="@dimen/dp_10"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
     <View
+        android:id="@+id/view"
         android:background="@color/EAEAEA"
         android:layout_below="@+id/register_back"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/px_29">
+        android:layout_height="@dimen/dp_10">
 
     </View>
+    <TextView
+        android:id="@+id/phone_tv"
+        android:textColor="@color/_333333"
+        android:text="@string/phone"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_below="@+id/view"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textSize="@dimen/sp_15"
+        android:id="@+id/phone_et"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignBottom="@+id/phone_tv"
+        android:layout_toEndOf="@+id/phone_tv"
+        android:layout_toRightOf="@+id/phone_tv"
+        android:background="@null" />
+    <View
+        android:id="@+id/view1"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/EEEEEE"
+        android:layout_below="@+id/phone_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1">
+
+    </View>
+    <TextView
+        android:id="@+id/verification_tv"
+        android:textColor="@color/_333333"
+        android:text="@string/verification"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_below="@+id/view1"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/verification_et"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignBottom="@+id/verification_tv"
+        android:layout_toEndOf="@+id/verification_tv"
+        android:layout_toRightOf="@+id/verification_tv"
+        android:background="@null" />
+    <TextView
+        android:layout_alignBottom="@+id/verification_et"
+        android:layout_toEndOf="@+id/verification_et"
+        android:layout_toRightOf="@+id/verification_et"
+        android:gravity="center"
+        android:background="@drawable/shape_verification"
+        android:text="@string/get_code"
+        android:textSize="@dimen/sp_15"
+        android:layout_marginTop="@dimen/dp_10"
+        android:textColor="@color/_333333"
+        android:layout_width="@dimen/dp_88"
+        android:layout_height="@dimen/dp_24" />
+    <View
+        android:id="@+id/view2"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/EEEEEE"
+        android:layout_below="@+id/verification_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1">
+
+    </View>
+    <TextView
+        android:id="@+id/setpassword_tv"
+        android:textColor="@color/_333333"
+        android:text="@string/setpassword"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_below="@+id/view2"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textSize="@dimen/sp_15"
+        android:hint="@string/hint_setpassword"
+        android:id="@+id/setpassword_et"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignBottom="@+id/setpassword_tv"
+        android:layout_toEndOf="@+id/setpassword_tv"
+        android:layout_toRightOf="@+id/setpassword_tv"
+        android:background="@null" />
+    <View
+        android:id="@+id/view3"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/EEEEEE"
+        android:layout_below="@+id/setpassword_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1">
+
+    </View>
+    <TextView
+        android:id="@+id/invitation_tv"
+        android:textColor="@color/_333333"
+        android:text="@string/invitation"
+        android:layout_marginTop="@dimen/dp_15"
+        android:layout_below="@+id/view3"
+        android:layout_marginLeft="@dimen/dp_16"
+        android:textSize="@dimen/sp_15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:textSize="@dimen/sp_15"
+        android:id="@+id/invitation_et"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_20"
+        android:layout_alignBottom="@+id/invitation_tv"
+        android:layout_toEndOf="@+id/invitation_tv"
+        android:layout_toRightOf="@+id/invitation_tv"
+        android:background="@null" />
+    <View
+        android:id="@+id/view4"
+        android:layout_marginTop="@dimen/dp_15"
+        android:background="@color/EEEEEE"
+        android:layout_below="@+id/invitation_tv"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1">
+
+    </View>
+    <Button
+        android:id="@+id/register_register_bt"
+        android:textColor="@color/FFFFFF"
+        android:textSize="@dimen/sp_18"
+        android:text="@string/register"
+        android:background="@drawable/shape_register_false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dp_42"
+        android:layout_below="@+id/view4"
+        android:layout_width="@dimen/dp_340"
+        android:layout_height="@dimen/dp_44" />
+    <TextView
+        android:id="@+id/name_pas_login"
+        android:layout_marginTop="@dimen/dp_19"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_register_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="账号密码登录"
+        android:textColor="#ffffda47"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:layout_marginTop="@dimen/dp_47"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/name_pas_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="使用第三方账号登录"
+        android:textColor="#ff666666"
+        android:textSize="15sp"
+        />
+
 </RelativeLayout>

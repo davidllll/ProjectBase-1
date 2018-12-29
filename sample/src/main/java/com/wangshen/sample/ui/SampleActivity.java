@@ -155,7 +155,7 @@ public class SampleActivity extends BaseMvpActivity<SamplePresenterImp> implemen
             ARouter.getInstance().build(AppActivityKey.SAMPLEREFESH_ACTIVITY).navigation(this);
         }else if (i == R.id.sample_bt4){
            // startActivity(new Intent(this,NavigationActivity.class));
-            ARouter.getInstance().build(AppActivityKey.NATIVE).navigation(this);
+            ARouter.getInstance().build(AppActivityKey.LOGIN_REGISTER).navigation(this);
         }
     }
 
