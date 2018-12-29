@@ -38,4 +38,6 @@
     <dimen name="dp_42">42dp</dimen>
     <dimen name="dp_19">19dp</dimen>
     <dimen name="dp_47">47dp</dimen>
+    <dimen name="dp_26">26dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
 </resources>

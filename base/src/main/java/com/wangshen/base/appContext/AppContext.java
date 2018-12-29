@@ -1,4 +1,4 @@
-package com.wangshen.base.AppContext;
+package com.wangshen.base.appContext;
 
 import android.app.Application;
 
