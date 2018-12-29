@@ -34,6 +34,7 @@ public class LoginActivity extends BaseMvpActivity implements LoginContact.View{
 
     }
 
+
     @Override
     public void initLinsenterner() {
 
